@@ -24,6 +24,6 @@ const List = () => {
       ))}
     </ul>
   );
-}
+};
 
 export default List;
