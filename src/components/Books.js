@@ -1,11 +1,11 @@
 import React from 'react';
-import BookInput from './BookInput';
+import NewBookForm from './NewBookForm';
 import List from './List';
 
 const Books = () => (
   <>
     <List />
-    <BookInput />
+    <NewBookForm />
   </>
 );
 
