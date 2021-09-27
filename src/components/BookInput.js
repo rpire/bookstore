@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const BookInput = () => {
   const categories = ['Action', 'Science Fiction', 'Economy', 'Romance'];
@@ -24,7 +24,7 @@ const BookInput = () => {
       </select>
       <button type="submit">ADD BOOK</button>
     </form>
-  )
+  );
 };
 
 export default BookInput;

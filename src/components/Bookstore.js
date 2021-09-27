@@ -5,8 +5,7 @@ import Books from './Books';
 import Categories from './Categories';
 import NotFound from './NotFound';
 
-const Bookstore = () => {
-  return (
+const Bookstore = () => (
     <>
       <Navbar />
       <Switch>
@@ -21,7 +20,6 @@ const Bookstore = () => {
         </Route>
       </Switch>
     </>
-  )
-};
+  );
 
 export default Bookstore;
