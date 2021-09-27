@@ -11,6 +11,11 @@ const NewBookForm = () => {
         placeholder="Book title"
         name="title"
       />
+      <input
+        type="text"
+        placeholder="Book author"
+        name="author"
+      />
       <select name="category">
         {categories.map((category) => (
           <option
