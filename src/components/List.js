@@ -1,24 +1,14 @@
-import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const List = () => {
-  const [bookList, setBookList] = useState([
-    {
-      id: 1,
-      author: 'Example Author',
-      title: 'Example Title',
-      category: 'Action',
-    },
-  ]);
-
-  const handleChange = () => setBookList([]);
+  const books = useSelector(state => state.bookList);
 
   return (
     <ul>
-      {bookList.map((book) => (
+      {books.map((book) => (
         <Book
           key={book.id}
-          handleChange={handleChange}
           book={book}
         />
       ))}
