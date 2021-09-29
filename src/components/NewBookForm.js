@@ -34,7 +34,7 @@ const NewBookForm = () => {
 
     if (newBook.title.length < 1) {
       newBook.error = 'Please introduce the title of the book';
-      setForm(newBook)
+      setForm(newBook);
     } else if (newBook.author < 1) {
       newBook.author = 'Anonymous';
       dispatch(addBook(newBook));
@@ -44,16 +44,16 @@ const NewBookForm = () => {
         author: '',
         category: 'Action',
         error: 'Author was set as "Anonymous"',
-      }); 
-    }else {
-     dispatch(addBook(newBook));
+      });
+    } else {
+      dispatch(addBook(newBook));
       setForm({
         id: '',
         title: '',
         author: '',
         category: 'Action',
         error: '',
-      }); 
+      });
     }
   };
 
@@ -90,7 +90,7 @@ const NewBookForm = () => {
         ))}
       </select>
       <button type="button" onClick={addNewBook}>ADD BOOK</button>
-      <br/>
+      <br />
       <small>{form.error}</small>
     </form>
   );

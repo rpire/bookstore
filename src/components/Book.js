@@ -5,13 +5,18 @@ import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const { book } = props;
-  const { id, author, title, category } = book;
+  const {
+    id,
+    author,
+    title,
+    category
+  } = book;
 
   const dispatch = useDispatch();
 
   const HandleRemove = () => {
     dispatch(removeBook(id));
-  }
+  };
 
   return (
     <li>
