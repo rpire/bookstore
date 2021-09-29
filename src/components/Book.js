@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const book = props.book;
   const {
-    id,
-    author,
-    title,
-    category,
-  } = book;
+    book: {
+      id,
+      author,
+      title,
+      category, 
+    }
+  } = props;
 
   const dispatch = useDispatch();
 
