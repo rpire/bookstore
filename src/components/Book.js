@@ -9,8 +9,8 @@ const Book = (props) => {
       id,
       author,
       title,
-      category, 
-    }
+      category,
+    },
   } = props;
 
   const dispatch = useDispatch();
