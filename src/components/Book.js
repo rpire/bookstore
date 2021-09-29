@@ -9,7 +9,7 @@ const Book = (props) => {
     id,
     author,
     title,
-    category
+    category,
   } = book;
 
   const dispatch = useDispatch();
