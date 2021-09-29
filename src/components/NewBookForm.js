@@ -1,26 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 
 const NewBookForm = () => {
   const categories = ['Action', 'Science Fiction', 'Economy', 'Romance'];
+  const initialForm = {
+    id: '',
+    title: '',
+    author: '',
+    category: 'Action',
+    error: '',
+  };
+
+  const [form, setForm] = useState(initialForm);
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const dispatch = useDispatch();
+
+  const addNewBook = (e) => {
+    e.preventDefault();
+    const newBook = {
+      id: uuidv4(),
+      title: form.title,
+      author: form.author,
+      category: form.category.replace(/[-]/g, ' '),
+      error: '',
+    };
+
+    if (newBook.title.length < 1) {
+      newBook.error = 'Please introduce the title of the book';
+      setForm(newBook);
+    } else if (newBook.author < 1) {
+      newBook.author = 'Anonymous';
+      newBook.error = 'No author found';
+      dispatch(addBook(newBook));
+      setForm({
+        ...initialForm, error: 'Author was set as "Anonymous"',
+      });
+    } else {
+      dispatch(addBook(newBook));
+      setForm(initialForm);
+    }
+  };
 
   return (
-    <form>
+    <form onSubmit={addNewBook}>
       <h2>Add Book</h2>
       <input
         type="text"
         placeholder="Book title"
         name="title"
+        value={form.title}
+        onChange={handleChange}
       />
       <input
         type="text"
         placeholder="Book author"
         name="author"
+        value={form.author}
+        onChange={handleChange}
       />
-      <select name="category">
+      <select
+        name="category"
+        value={form.category}
+        onChange={handleChange}
+      >
         {categories.map((category) => (
           <option
             key={category.replace(/[ ]/g, '-').toLowerCase()}
-            value={category.replace(/[ ]/g, '-').toLowerCase()}
+            value={category.replace(/[ ]/g, '-')}
             name={category.replace(/[ ]/g, '-').toLowerCase()}
           >
             {category}
@@ -28,6 +83,8 @@ const NewBookForm = () => {
         ))}
       </select>
       <button type="submit">ADD BOOK</button>
+      <br />
+      <small>{form.error}</small>
     </form>
   );
 };

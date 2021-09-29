@@ -1,9 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { book, handleChange } = props;
-  const { author, title, category } = book;
+  const {
+    book: {
+      id,
+      author,
+      title,
+      category,
+    },
+  } = props;
+
+  const dispatch = useDispatch();
+
+  const HandleRemove = () => {
+    dispatch(removeBook(id));
+  };
 
   return (
     <li>
@@ -12,7 +26,7 @@ const Book = (props) => {
       <span>{category}</span>
       <button
         type="button"
-        onClick={handleChange}
+        onClick={HandleRemove}
       >
         Remove
       </button>
@@ -22,7 +36,6 @@ const Book = (props) => {
 
 Book.propTypes = {
   book: PropTypes.instanceOf(Object).isRequired,
-  handleChange: PropTypes.func.isRequired,
 };
 
 export default Book;
