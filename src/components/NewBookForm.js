@@ -5,14 +5,15 @@ import { addBook } from '../redux/books/books';
 
 const NewBookForm = () => {
   const categories = ['Action', 'Science Fiction', 'Economy', 'Romance'];
-
-  const [form, setForm] = useState({
+  const initialForm = {
     id: '',
     title: '',
     author: '',
     category: 'Action',
     error: '',
-  });
+  };
+
+  const [form, setForm] = useState(initialForm);
 
   const handleChange = (e) => {
     setForm({
@@ -23,7 +24,8 @@ const NewBookForm = () => {
 
   const dispatch = useDispatch();
 
-  const addNewBook = () => {
+  const addNewBook = (e) => {
+    e.preventDefault();
     const newBook = {
       id: uuidv4(),
       title: form.title,
@@ -37,28 +39,19 @@ const NewBookForm = () => {
       setForm(newBook);
     } else if (newBook.author < 1) {
       newBook.author = 'Anonymous';
+      newBook.error = 'No author found';
       dispatch(addBook(newBook));
       setForm({
-        id: '',
-        title: '',
-        author: '',
-        category: 'Action',
-        error: 'Author was set as "Anonymous"',
+        ...initialForm, error: 'Author was set as "Anonymous"',
       });
     } else {
       dispatch(addBook(newBook));
-      setForm({
-        id: '',
-        title: '',
-        author: '',
-        category: 'Action',
-        error: '',
-      });
+      setForm(initialForm);
     }
   };
 
   return (
-    <form>
+    <form onSubmit={addNewBook}>
       <h2>Add Book</h2>
       <input
         type="text"
@@ -89,7 +82,7 @@ const NewBookForm = () => {
           </option>
         ))}
       </select>
-      <button type="button" onClick={addNewBook}>ADD BOOK</button>
+      <button type="submit">ADD BOOK</button>
       <br />
       <small>{form.error}</small>
     </form>
