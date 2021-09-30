@@ -10,7 +10,7 @@ const List = () => {
 
   useEffect(() => {
     dispatch(loadBookList());
-  }, [dispatch] );
+  }, [dispatch]);
 
   return (
     <ul>

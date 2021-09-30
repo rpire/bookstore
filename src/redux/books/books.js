@@ -18,7 +18,7 @@ const booksReducer = (state = initialState, action) => {
 };
 
 export const setBookList = (payload) => ({
-  type:  SET_BOOK_LIST,
+  type: SET_BOOK_LIST,
   payload,
 });
 
@@ -35,13 +35,13 @@ export const removeBook = (id) => ({
 export const loadBookList = () => async (dispatch) => {
   const bookList = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hQEyeWlSMsWzmo9ZsANn/books')
     .then((response) => response.json());
-    const booksID = Object.keys(bookList);
-    const formatedBooks = [];
-    booksID.map((key) => formatedBooks.push({
-        id: key,
-        title: bookList[key][0].title,
-        category: bookList[key][0].category,
-      }));
+  const booksID = Object.keys(bookList);
+  const formatedBooks = [];
+  booksID.map((key) => formatedBooks.push({
+    id: key,
+    title: bookList[key][0].title,
+    category: bookList[key][0].category,
+  }));
   dispatch(setBookList(formatedBooks));
 };
 
@@ -49,9 +49,9 @@ export const postBook = (newBook) => async (dispatch) => {
   await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hQEyeWlSMsWzmo9ZsANn/books', {
     method: 'POST',
     body: JSON.stringify({
-        item_id: newBook.id,
-        title: newBook.title,
-        category: newBook.category,
+      item_id: newBook.id,
+      title: newBook.title,
+      category: newBook.category,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
@@ -64,7 +64,7 @@ export const deleteBook = (id) => async (dispatch) => {
   await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hQEyeWlSMsWzmo9ZsANn/books/${id}`, {
     method: 'DELETE',
     body: JSON.stringify({
-        item_id: id,
+      item_id: id,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
