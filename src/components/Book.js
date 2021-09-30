@@ -19,7 +19,7 @@ const Book = (props) => {
   };
 
   return (
-    <li>
+    <li className="book flex-box">
       <span>{title}</span>
       <span>{category}</span>
       <button

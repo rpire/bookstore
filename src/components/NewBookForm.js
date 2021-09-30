@@ -47,32 +47,33 @@ const NewBookForm = () => {
   };
 
   return (
-    <form onSubmit={addNewBook}>
-      <h2>Add Book</h2>
-      <input
-        type="text"
-        placeholder="Book title"
-        name="title"
-        value={form.title}
-        onChange={handleChange}
-      />
-      <select
-        name="category"
-        value={form.category}
-        onChange={handleChange}
-      >
-        {categories.map((category) => (
-          <option
-            key={category.replace(/[ ]/g, '-').toLowerCase()}
-            value={category.replace(/[ ]/g, '-')}
-            name={category.replace(/[ ]/g, '-').toLowerCase()}
-          >
-            {category}
-          </option>
-        ))}
-      </select>
-      <button type="submit">ADD BOOK</button>
-      <br />
+    <form onSubmit={addNewBook} className="flex-box">
+      <h2>ADD NEW BOOK</h2>
+      <div className="input-container flex-box">
+        <input
+          type="text"
+          placeholder="Book title"
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+        />
+        <select
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+        >
+          {categories.map((category) => (
+            <option
+              key={category.replace(/[ ]/g, '-').toLowerCase()}
+              value={category.replace(/[ ]/g, '-')}
+              name={category.replace(/[ ]/g, '-').toLowerCase()}
+            >
+              {category}
+            </option>
+          ))}
+        </select>
+        <button type="submit">ADD BOOK</button>
+      </div>
       <small>{error}</small>
     </form>
   );
