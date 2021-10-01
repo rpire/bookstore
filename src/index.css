@@ -42,7 +42,7 @@ nav ul a {
 }
 
 .active-link {
-  color: #121212
+  color: #121212;
 }
 
 .prof-pic {
@@ -85,9 +85,9 @@ nav ul a {
   font-size: 20px;
 }
 
-.book-category{
+.book-category {
   font-weight: 600;
-  color: #888888;
+  color: #888;
 }
 
 .book-title {
@@ -111,6 +111,13 @@ nav ul a {
 .options li {
   font-weight: 400;
   color: #0290ff;
+}
+
+button {
+  background-color: #0290ff;
+  font-family: "roboto-slab", serif;
+  color: #fff;
+  border: none;
 }
 
 .remove-button {
@@ -143,8 +150,7 @@ nav ul a {
   flex-direction: column;
 }
 
-.percentage,
-.percentage-text {
+.percentage, .percentage-text {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
 }
@@ -156,7 +162,7 @@ nav ul a {
 
 .percentage-text {
   font-size: 20px;
-  color: #888888;
+  color: #888;
 }
 
 .update-progress {
@@ -169,7 +175,7 @@ nav ul a {
 
 .update-progress span {
   font-size: 20px;
-  color: #888888;
+  color: #888;
 }
 
 .update-progress .current {
@@ -192,7 +198,7 @@ form {
 
 form h2 {
   font-size: 24px;
-  color: #888888;
+  color: #888;
 }
 
 .input-container {
@@ -226,12 +232,6 @@ form h2 {
   width: 15%;
 }
 
-button {
-  background-color:#0290ff;
-  font-family: "roboto-slab";
-  color: #fff;
-  border: none;
-}
 
 .flex-box {
   display: flex;
