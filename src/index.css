@@ -4,5 +4,235 @@
 }
 
 body {
-  background-color: beige;
+  background-color: #fafafa;
+  font-family: "roboto-slab", serif;
+}
+
+nav {
+  align-items: center;
+  gap: 50px;
+  background-color: #fff;
+  padding: 30px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+h1,
+h2 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 38px;
+  color: #0290ff;
+  margin: 0 5%;
+}
+
+nav ul {
+  gap: 40px;
+  list-style-type: none;
+}
+
+nav ul a {
+  font-family: "montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #12121285;
+}
+
+.active-link {
+  color: #121212;
+}
+
+.prof-pic {
+  justify-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  color: #0290ff;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  margin: auto;
+  margin-right: 5%;
+}
+
+.book-list {
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e8e8e8;
+  margin: 40px 5% 30px 5%;
+}
+
+.book {
+  background-color: #fff;
+  min-height: 175px;
+  border: 1px solid #e8e8e8;
+}
+
+.book-info {
+  width: 45%;
+  margin-top: 30px;
+  margin-left: 2.25%;
+}
+
+.book-category,
+.book-author {
+  font-size: 20px;
+}
+
+.book-category {
+  font-weight: 600;
+  color: #888;
+}
+
+.book-title {
+  font-family: 'montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #121212;
+}
+
+.book-author {
+  font-weight: 400;
+  color: #0290ff;
+}
+
+.options {
+  align-items: center;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.options li {
+  font-weight: 400;
+  color: #0290ff;
+}
+
+button {
+  background-color: #0290ff;
+  font-family: "roboto-slab", serif;
+  color: #fff;
+  border: none;
+}
+
+.remove-button {
+  background-color: transparent;
+  font-size: 16px;
+  color: #0290ff;
+  padding: 0 10px;
+  border-right: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  margin: 0 10px;
+}
+
+.book-progress {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 27.5%;
+}
+
+.progress {
+  width: 75px;
+  height: 75px;
+  border: 5px solid #e8e8e8;
+  border-right-color: #0290ff;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.progress-info {
+  flex-direction: column;
+}
+
+.percentage,
+.percentage-text {
+  font-family: "montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.percentage {
+  font-size: 50px;
+  color: #121212;
+}
+
+.percentage-text {
+  font-size: 20px;
+  color: #888;
+}
+
+.update-progress {
+  flex-direction: column;
+  width: 27.5%;
+  padding: 0 3.5%;
+  border-left: 2px solid #e8e8e8;
+  margin: 35px 0;
+}
+
+.update-progress span {
+  font-size: 20px;
+  color: #888;
+}
+
+.update-progress .current {
+  color: #121212;
+  margin-top: 10px;
+}
+
+.update-button {
+  width: 220px;
+  height: 25px;
+  margin-top: auto;
+}
+
+form {
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 100px;
+  margin: 0 5%;
+}
+
+form h2 {
+  font-size: 24px;
+  color: #888;
+}
+
+.input-container {
+  justify-content: space-between;
+}
+
+.input-container input,
+.input-container select,
+.input-container button {
+  height: 45px;
+}
+
+.input-container input,
+.input-container select {
+  font-family: "montserrat", sans-serif;
+  color: #7e7e7e;
+  padding-left: 15px;
+  border: 1px solid #e8e8e8;
+}
+
+.input-container input {
+  width: 47.45%;
+}
+
+.input-container select {
+  width: 20.55%;
+}
+
+.input-container button {
+  font-weight: 600;
+  width: 15%;
+}
+
+.flex-box {
+  display: flex;
 }

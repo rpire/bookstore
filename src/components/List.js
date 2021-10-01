@@ -13,7 +13,7 @@ const List = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="book-list flex-box">
       {books.map((book) => (
         <Book
           key={book.id}
