@@ -34,9 +34,10 @@ const NewBookForm = () => {
     if (newBook.title.length < 1) {
       setError('Please introduce the title of the book');
       setForm(newBook);
-    } else if (newBook.title.length >= 30) {
+    } else if (newBook.title.length >= 25) {
       setError('');
-      newBook.title = newBook.title.substring(0, 30).concat('...');
+      newBook.title = newBook.title.substring(0, 22).concat('...');
+      console.log(newBook.title);
       dispatch(postBook(newBook));
       setForm(initialForm);
     } else {

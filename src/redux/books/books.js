@@ -42,6 +42,7 @@ export const loadBookList = () => async (dispatch) => {
     title: bookList[key][0].title,
     category: bookList[key][0].category,
   }));
+  console.log(formatedBooks);
   dispatch(setBookList(formatedBooks));
 };
 

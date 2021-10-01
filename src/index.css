@@ -69,14 +69,124 @@ nav ul a {
 }
 
 .book {
-  justify-content: space-evenly;
   background-color: #fff;
+  min-height: 175px;
   border: 1px solid #e8e8e8;
+}
+
+.book-info {
+  width: 45%;
+  margin-top: 30px;
+  margin-left: 2.25%;
+}
+
+.book-category,
+.book-author {
+  font-size: 20px;
+}
+
+.book-category{
+  font-weight: 600;
+  color: #888888;
+}
+
+.book-title {
+  font-family: 'montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #121212;
+}
+
+.book-author {
+  font-weight: 400;
+  color: #0290ff;
+}
+
+.options {
+  align-items: center;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.options li {
+  font-weight: 400;
+  color: #0290ff;
+}
+
+.remove-button {
+  background-color: transparent;
+  font-size: 16px;
+  color: #0290ff;
+  padding: 0 10px;
+  border-right: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  margin: 0 10px;
+}
+
+.book-progress {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 27.5%;
+}
+
+.progress {
+  width: 75px;
+  height: 75px;
+  border: 5px solid #e8e8e8;
+  border-right-color: #0290ff;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.progress-info {
+  flex-direction: column;
+}
+
+.percentage,
+.percentage-text {
+  font-family: "montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.percentage {
+  font-size: 50px;
+  color:#121212;
+}
+
+.percentage-text {
+  font-size: 20px;
+  color: #888888;
+}
+
+.update-progress {
+  flex-direction: column;
+  width: 27.5%;
+  padding: 0 3.5%;
+  border-left: 2px solid #e8e8e8;
+  margin: 35px 0;
+}
+
+.update-progress span {
+  font-size: 20px;
+  color: #888888;
+}
+
+.update-progress .current {
+  color: #121212;
+  margin-top: 10px;
+}
+
+.update-button {
+  width: 220px;
+  height: 25px;
+  margin-top: auto;
 }
 
 form {
   flex-direction: column;
   gap: 20px;
+  padding-bottom: 100px;
   margin: 0 5%;
 }
 
@@ -121,10 +231,6 @@ button {
   font-family: "roboto-slab";
   color: #fff;
   border: none;
-}
-
-button:hover {
-  background-color: #0380df;
 }
 
 .flex-box {
