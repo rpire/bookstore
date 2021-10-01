@@ -150,14 +150,15 @@ button {
   flex-direction: column;
 }
 
-.percentage, .percentage-text {
+.percentage,
+.percentage-text {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
 }
 
 .percentage {
   font-size: 50px;
-  color:#121212;
+  color: #121212;
 }
 
 .percentage-text {
@@ -231,7 +232,6 @@ form h2 {
   font-weight: 600;
   width: 15%;
 }
-
 
 .flex-box {
   display: flex;
